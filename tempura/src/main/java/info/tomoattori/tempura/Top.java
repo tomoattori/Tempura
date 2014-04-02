@@ -1,17 +1,23 @@
 package info.tomoattori.tempura;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import info.tomoattori.tempura.view.SurfaceViewActivity;
 
 
-public class Top extends Activity {
+public class Top extends Activity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.top);
+
+        findViewById(R.id.top_surfaceview_button).setOnClickListener(this);
     }
 
 
@@ -35,4 +41,16 @@ public class Top extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onClick(View view) {
+        Intent intent;
+        switch (view.getId()) {
+            case R.id.top_surfaceview_button:
+                intent = new Intent(this, SurfaceViewActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
+    }
 }
