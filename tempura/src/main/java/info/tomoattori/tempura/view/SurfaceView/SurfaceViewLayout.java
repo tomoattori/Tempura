@@ -1,4 +1,4 @@
-package info.tomoattori.tempura.view;
+package info.tomoattori.tempura.view.SurfaceView;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,22 +10,10 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-public class SurfaceViewActivity extends Activity {
+import info.tomoattori.tempura.R;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        setContentView(new MySurfaceView(this));
-    }
-
-}
-
-// SurfaceViewクラス
-class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback {
-    // 描画する四角の縦横幅
-    private final float RECT_WIDTH = 50;
-    private final float RECT_HEIGHT = 50;
+public class SurfaceViewLayout extends Activity {
+    private MySurfaceView2 mMySurfaceView2;
 
     // Touchイベント発生時の座標
     private float mTouchStartX = 0;
@@ -39,31 +27,16 @@ class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback {
     private float mOffsetX = 0;
     private float mOffsetY = 0;
 
-    // コンストラクタ
-    public MySurfaceView(Context context) {
-        super(context);
-
-        setFocusable(true);
-        getHolder().addCallback(this);
-    }
-
-    // SurfaceViewが作成された時の処理
     @Override
-    public void surfaceCreated(SurfaceHolder surfaceHolder) {
-        // Canvasの描画
-        doDraw(surfaceHolder);
-    }
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
-    // SurfaceViewが変化した時の処理(サイズ変更など)
-    @Override
-    public void surfaceChanged(SurfaceHolder surfaceHolder, int format, int width, int height) {
-        // 今回は特に何もしない
-    }
+        // Layoutの設定
+        setContentView(R.layout.surface_view_layout);
 
-    // SurfaceViewが破棄された時の処理
-    @Override
-    public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
-        // 今回は特に何もしない
+        SurfaceView sv = (SurfaceView) findViewById(R.id.svl_surfaceview);
+        mMySurfaceView2 = new MySurfaceView2(this, sv);
+
     }
 
     // Touchイベントの処理
@@ -101,28 +74,65 @@ class MySurfaceView extends SurfaceView implements SurfaceHolder.Callback {
         }
 
         // 移動結果を画面に反映させる
-        doDraw(getHolder());
+        mMySurfaceView2.doDraw(mOffsetX + mTouchMoveX, mOffsetY + mTouchMoveY);
 
         // Touchイベントはここで使い切る
         return true;
     }
 
+}
+
+// SurfaceViewクラス
+class MySurfaceView2 implements SurfaceHolder.Callback {
+    SurfaceHolder mSvHolder;
+
+    // 描画する四角の縦横幅
+    private final float RECT_WIDTH = 50;
+    private final float RECT_HEIGHT = 50;
+
+    // コンストラクタ
+    public MySurfaceView2(Context context, SurfaceView sv) {
+        sv.setFocusable(true);
+
+        mSvHolder = sv.getHolder();
+        mSvHolder.addCallback(this);
+    }
+
+    // SurfaceViewが作成された時の処理
+    @Override
+    public void surfaceCreated(SurfaceHolder surfaceHolder) {
+        // Canvasの描画
+        doDraw(0,0);
+    }
+
+    // SurfaceViewが変化した時の処理(サイズ変更など)
+    @Override
+    public void surfaceChanged(SurfaceHolder surfaceHolder, int format, int width, int height) {
+        // 今回は特に何もしない
+    }
+
+    // SurfaceViewが破棄された時の処理
+    @Override
+    public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
+        // 今回は特に何もしない
+    }
+
     // 画面描画処理
-    private void doDraw(SurfaceHolder holder) {
+    public void doDraw(float offsetX, float offsetY) {
         // Paintオブジェクトの作成
         Paint paint = new Paint();
         paint.setColor(Color.BLUE);
 
         // Canvasのロックと確保
-        Canvas canvas = holder.lockCanvas();
+        Canvas canvas = mSvHolder.lockCanvas();
 
         // 指定位置に四角を描画する(背景は黒)
         canvas.drawColor(Color.BLACK);
-        canvas.drawRect(mOffsetX + mTouchMoveX, mOffsetY + mTouchMoveY,
-                        mOffsetX + mTouchMoveX + RECT_WIDTH, mOffsetY + mTouchMoveY + RECT_HEIGHT,
+        canvas.drawRect(offsetX, offsetY,
+                        offsetX + RECT_WIDTH, offsetY + RECT_HEIGHT,
                         paint);
 
         // Canvasへの反映とロック解除
-        holder.unlockCanvasAndPost(canvas);
+        mSvHolder.unlockCanvasAndPost(canvas);
     }
 }

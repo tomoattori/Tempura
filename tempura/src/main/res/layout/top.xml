@@ -14,11 +14,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/top_button_surfaceview"
-        android:id="@+id/top_surfaceview_button" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/top_button_surfaceviewonly"
+            android:id="@+id/button_top_surfaceview_only" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/top_button_surfaceviewlayout"
+            android:id="@+id/button_top_surfaceview_layout" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/top_button_surfaceviewextra"
+            android:id="@+id/button_top_surfaceview_extra" />
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -7,7 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import info.tomoattori.tempura.view.SurfaceViewActivity;
+import info.tomoattori.tempura.view.SurfaceView.SurfaceViewExtra;
+import info.tomoattori.tempura.view.SurfaceView.SurfaceViewLayout;
+import info.tomoattori.tempura.view.SurfaceView.SurfaceViewOnly;
 
 
 public class Top extends Activity implements View.OnClickListener {
@@ -17,7 +19,9 @@ public class Top extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.top);
 
-        findViewById(R.id.top_surfaceview_button).setOnClickListener(this);
+        findViewById(R.id.button_top_surfaceview_only).setOnClickListener(this);
+        findViewById(R.id.button_top_surfaceview_layout).setOnClickListener(this);
+        findViewById(R.id.button_top_surfaceview_extra).setOnClickListener(this);
     }
 
 
@@ -45,8 +49,16 @@ public class Top extends Activity implements View.OnClickListener {
     public void onClick(View view) {
         Intent intent;
         switch (view.getId()) {
-            case R.id.top_surfaceview_button:
-                intent = new Intent(this, SurfaceViewActivity.class);
+            case R.id.button_top_surfaceview_only:
+                intent = new Intent(this, SurfaceViewOnly.class);
+                startActivity(intent);
+                break;
+            case R.id.button_top_surfaceview_layout:
+                intent = new Intent(this, SurfaceViewLayout.class);
+                startActivity(intent);
+                break;
+            case R.id.button_top_surfaceview_extra:
+                intent = new Intent(this, SurfaceViewExtra.class);
                 startActivity(intent);
                 break;
             default:

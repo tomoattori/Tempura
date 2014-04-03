@@ -1,18 +1,20 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="info.tomoattori.tempura.view.SurfaceViewActivity">
+    android:orientation="vertical"
+    tools:context="info.tomoattori.tempura.view.SurfaceView.SurfaceViewLayout">
 
     <TextView
         android:text="@string/title_activity_surface_view"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/black"
         android:textColor="@android:color/white" />
 
     <SurfaceView
-        android:id="@+id/sva_surfaceview"
+        android:id="@+id/svl_surfaceview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-</RelativeLayout>
+</LinearLayout>

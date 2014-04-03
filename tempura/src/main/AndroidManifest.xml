@@ -17,8 +17,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="info.tomoattori.tempura.view.SurfaceViewActivity"
-            android:label="@string/title_activity_surface_view" >
+            android:name=".view.SurfaceView.SurfaceViewOnly" >
+        </activity>
+        <activity
+            android:name=".view.SurfaceView.SurfaceViewLayout" >
+        </activity>
+        <activity
+            android:name=".view.SurfaceView.SurfaceViewExtra" >
         </activity>
     </application>
 

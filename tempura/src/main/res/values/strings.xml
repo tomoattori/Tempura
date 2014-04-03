@@ -2,10 +2,11 @@
 <resources>
 
     <string name="app_name">Tempura</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_surface_view">SurfaceView Sample</string>
-    <string name="top_label_surfaceview">Surface View</string>
-    <string name="top_button_surfaceview">SurfaceView</string>
+    <string name="top_label_surfaceview">SurfaceView</string>
+    <string name="top_button_surfaceviewonly">View only</string>
+    <string name="top_button_surfaceviewlayout">With layout</string>
+    <string name="top_button_surfaceviewextra">extra</string>
 
 </resources>

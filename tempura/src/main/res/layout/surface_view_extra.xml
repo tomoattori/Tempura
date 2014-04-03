@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="info.tomoattori.tempura.view.SurfaceView.SurfaceViewLayout">
+
+    <TextView
+        android:id="@+id/svx_textview"
+        android:text="@string/title_activity_surface_view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:background="@android:color/black"
+        android:textColor="@android:color/white" />
+
+    <SurfaceView
+        android:id="@+id/svx_surfaceview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
