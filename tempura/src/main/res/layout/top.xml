@@ -42,4 +42,37 @@
 
     </LinearLayout>
 
+    <TextView
+        android:text="@string/top_label_listview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/top_button_simple_listview"
+            android:id="@+id/button_top_simple_listview" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/top_button_basic_listview"
+            android:id="@+id/button_top_basic_listview" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/top_button_tostring_listview"
+            android:id="@+id/button_top_tostring_listview" />
+
+    </LinearLayout>
+
 </LinearLayout>

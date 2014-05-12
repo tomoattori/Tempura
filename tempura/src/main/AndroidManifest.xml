@@ -16,14 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".view.SurfaceView.SurfaceViewOnly" >
+        <activity android:name="info.tomoattori.tempura.view.SurfaceView.SurfaceViewOnly" >
         </activity>
-        <activity
-            android:name=".view.SurfaceView.SurfaceViewLayout" >
+        <activity android:name="info.tomoattori.tempura.view.SurfaceView.SurfaceViewLayout" >
         </activity>
-        <activity
-            android:name=".view.SurfaceView.SurfaceViewExtra" >
+        <activity android:name="info.tomoattori.tempura.view.SurfaceView.SurfaceViewExtra" >
+        </activity>
+        <activity android:name="info.tomoattori.tempura.view.ListView.SimpleListView" >
         </activity>
     </application>
 

@@ -8,5 +8,11 @@
     <string name="top_button_surfaceviewonly">View only</string>
     <string name="top_button_surfaceviewlayout">With layout</string>
     <string name="top_button_surfaceviewextra">extra</string>
+    <string name="title_activity_simple_list_view">SimpleListView</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="top_label_listview">ListView</string>
+    <string name="top_button_simple_listview">Simple</string>
+    <string name="top_button_basic_listview">basic</string>
+    <string name="top_button_tostring_listview">toString</string>
 
 </resources>

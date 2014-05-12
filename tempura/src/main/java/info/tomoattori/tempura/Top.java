@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import info.tomoattori.tempura.view.ListView.SimpleListView;
 import info.tomoattori.tempura.view.SurfaceView.SurfaceViewExtra;
 import info.tomoattori.tempura.view.SurfaceView.SurfaceViewLayout;
 import info.tomoattori.tempura.view.SurfaceView.SurfaceViewOnly;
@@ -22,6 +23,9 @@ public class Top extends Activity implements View.OnClickListener {
         findViewById(R.id.button_top_surfaceview_only).setOnClickListener(this);
         findViewById(R.id.button_top_surfaceview_layout).setOnClickListener(this);
         findViewById(R.id.button_top_surfaceview_extra).setOnClickListener(this);
+        findViewById(R.id.button_top_simple_listview).setOnClickListener(this);
+        findViewById(R.id.button_top_basic_listview).setOnClickListener(this);
+        findViewById(R.id.button_top_tostring_listview).setOnClickListener(this);
     }
 
 
@@ -59,6 +63,10 @@ public class Top extends Activity implements View.OnClickListener {
                 break;
             case R.id.button_top_surfaceview_extra:
                 intent = new Intent(this, SurfaceViewExtra.class);
+                startActivity(intent);
+                break;
+            case R.id.button_top_simple_listview:
+                intent = new Intent(this, SimpleListView.class);
                 startActivity(intent);
                 break;
             default:
