@@ -25,6 +25,7 @@ public class SimpleListView extends Activity {
         ListView listView = (ListView) findViewById(R.id.simpleListViewBody);
 
         // ListViewにデータを渡すためのアダプタを準備する
+        // (android.R.layout.simple_list_item_1は個々のアイテムの表示レイアウト。これが定番)
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listViewData);
 
         // ListViewにアダプタをセットする
@@ -70,6 +71,7 @@ public class SimpleListView extends Activity {
 
         // ListViewのアイテムが選択された時に呼び出されるコールバックリスナを登録する
         // (トラックボール等がないと選択状態にならないので今となっては必要ないかも)
+        // (ListView#setSelection()してもこのコールバックは呼ばれなかった)
         listView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
