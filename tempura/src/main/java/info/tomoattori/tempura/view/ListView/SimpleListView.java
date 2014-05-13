@@ -19,7 +19,7 @@ public class SimpleListView extends Activity {
 
         // ListViewに表示するデータを定義しておく
         String[] listViewData = { "Cupcake", "Donut", "Eclair", "Froyo", "Gingerbread",
-                                   "Honeycomb", "Ice Cream Sandwitch", "Jerry Bean", "KitKat"};
+                                   "Honeycomb", "Ice Cream Sandwich", "Jerry Bean", "KitKat"};
 
         // Layoutで定義されたListViewを確保する
         ListView listView = (ListView) findViewById(R.id.simpleListViewBody);

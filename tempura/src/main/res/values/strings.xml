@@ -14,5 +14,6 @@
     <string name="top_button_simple_listview">Simple</string>
     <string name="top_button_basic_listview">basic</string>
     <string name="top_button_tostring_listview">toString</string>
+    <string name="title_activity_basic_list_view">BasicListView</string>
 
 </resources>
