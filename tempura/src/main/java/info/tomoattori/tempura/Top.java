@@ -9,6 +9,7 @@ import android.view.View;
 
 import info.tomoattori.tempura.view.ListView.BasicListView;
 import info.tomoattori.tempura.view.ListView.SimpleListView;
+import info.tomoattori.tempura.view.ListView.ToStringListView;
 import info.tomoattori.tempura.view.SurfaceView.SurfaceViewExtra;
 import info.tomoattori.tempura.view.SurfaceView.SurfaceViewLayout;
 import info.tomoattori.tempura.view.SurfaceView.SurfaceViewOnly;
@@ -72,6 +73,10 @@ public class Top extends Activity implements View.OnClickListener {
                 break;
             case R.id.button_top_basic_listview:
                 intent = new Intent(this, BasicListView.class);
+                startActivity(intent);
+                break;
+            case R.id.button_top_tostring_listview:
+                intent = new Intent(this, ToStringListView.class);
                 startActivity(intent);
                 break;
             default:
