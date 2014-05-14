@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import info.tomoattori.tempura.view.ListView.ActivityListView;
 import info.tomoattori.tempura.view.ListView.BasicListView;
 import info.tomoattori.tempura.view.ListView.SimpleListView;
 import info.tomoattori.tempura.view.ListView.ToStringListView;
@@ -28,6 +29,7 @@ public class Top extends Activity implements View.OnClickListener {
         findViewById(R.id.button_top_simple_listview).setOnClickListener(this);
         findViewById(R.id.button_top_basic_listview).setOnClickListener(this);
         findViewById(R.id.button_top_tostring_listview).setOnClickListener(this);
+        findViewById(R.id.button_top_listactivity).setOnClickListener(this);
     }
 
 
@@ -77,6 +79,10 @@ public class Top extends Activity implements View.OnClickListener {
                 break;
             case R.id.button_top_tostring_listview:
                 intent = new Intent(this, ToStringListView.class);
+                startActivity(intent);
+                break;
+            case R.id.button_top_listactivity:
+                intent = new Intent(this, ActivityListView.class);
                 startActivity(intent);
                 break;
             default:

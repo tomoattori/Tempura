@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="info.tomoattori.tempura.view.ListView.ActivityListView">
+
+    <TextView
+        android:text="@string/title_activity_list_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:textSize="20dp"/>
+
+    <!-- ListActivityで使用するListView -->
+    <!-- idを @android:id/list とする必要がある -->
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <!-- ListViewが空の時に表示されるテキスト -->
+    <!-- idを @android:id/empty とする必要がある -->
+    <TextView
+        android:id="@android:id/empty"
+        android:text="データがありません"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="24dp"/>
+
+    <ToggleButton
+        android:id="@+id/listActivityToggleButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:checked="true"
+        android:textOn="データが存在しない状態に変更"
+        android:textOff="データが存在する状態に変更" />
+
+</LinearLayout>
