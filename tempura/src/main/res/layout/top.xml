@@ -82,4 +82,23 @@
 
     </LinearLayout>
 
+    <TextView
+        android:text="@string/top_label_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/top_button_get_image_from_camera"
+            android:id="@+id/button_top_get_image_from_camera" />
+
+    </LinearLayout>
+
 </LinearLayout>

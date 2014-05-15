@@ -20,5 +20,9 @@
     <string name="top_button_listactivity">ListActivity</string>
     <string name="title_activity_activity_list_view">ActivityListView</string>
     <string name="title_activity_list_activity">ListActivity</string>
+    <string name="title_activity_get_image_from_camera">GetImageFromCamera</string>
+    <string name="get_image_from_camera_btn_text">写真を撮影する</string>
+    <string name="top_label_camera">Camera</string>
+    <string name="top_button_get_image_from_camera">カメラアプリを起動して画像を取得</string>
 
 </resources>
